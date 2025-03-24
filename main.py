@@ -12,7 +12,6 @@ for filename in os.listdir(input_folder):
         output_filename = filename[:-4]
         output_path = os.path.join(output_folder, output_filename)
 
-        # Lire et extraire le contenu
         with bz2.open(input_path, "rb") as f_in, open(output_path, "wb") as f_out:
             f_out.write(f_in.read())
 
