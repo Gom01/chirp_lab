@@ -1,0 +1,20 @@
+- chirp: 
+id 
+created_at
+text
+source
+lang
+user
+
+
+
+- user : 
+id 
+name 
+screen_name
+description
+followers_count
+friends_count
+created_at
+profile_image_url_https
+
