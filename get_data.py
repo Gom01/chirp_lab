@@ -1,5 +1,3 @@
-import streamlit as st
-import jq as jq
 import bz2
 import os
 
@@ -12,7 +10,8 @@ for filename in os.listdir(input_folder):
         output_filename = filename[:-4]
         output_path = os.path.join(output_folder, output_filename)
 
+        # extract data from bz2 file
         with bz2.open(input_path, "rb") as f_in, open(output_path, "wb") as f_out:
             f_out.write(f_in.read())
 
-print("Extraction terminée.")
+print("Done")
