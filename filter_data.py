@@ -13,7 +13,7 @@ for filename in os.listdir(folder_path):
         
         with open(file_path, 'r', encoding='utf-8') as f:
             total_chirps = []
-            # one line in the json file
+
             for line in f:
                 try:
                     total_chirps.append(json.loads(line))

@@ -7,7 +7,7 @@ def display_data():
     # Display Latest Chirps 
     st.header("Latest Chirps")
 
-    # Retrieve the latest 5 chirp IDs from the sorted set (highest timestamp first)
+    # Retrieve the latest 5 chirp IDs from the sorted set
     chirp_ids = r.zrevrange("chirps_by_date", 0, 4)
     
     for cid in chirp_ids:

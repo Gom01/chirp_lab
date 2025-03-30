@@ -2,11 +2,11 @@ import redis
 import json
 from dateutil import parser  # Install with: pip install python-dateutil
 
-# Connect to Redis (ensure you're in the correct DB)
+# Connect to Redis
 r = redis.Redis(host='127.0.0.1', port=6379, decode_responses=True)
 
 def populate_db():
-    # Optional: flush the DB to start fresh
+
     r.flushdb()
     
     # Open the JSON file containing the tweets
@@ -24,10 +24,8 @@ def populate_db():
                 "user_id": tweet["user"]["id"],
                 "created_at": tweet["created_at"],
                 "text": tweet["text"],
-                "source": tweet["source"],
                 "retweet_count": tweet["retweet_count"],
                 "favorite_count": tweet["favorite_count"],
-                "lang": tweet["lang"]
             })
 
             # Parse the 'created_at' field into a Unix timestamp
